@@ -14,13 +14,14 @@ namespace Clean_Arch___UnitOFWork.Controllers
         {
             _unitOfWork = unitOfWork;
         }
+
+        //---------Get all Magazines
         [HttpGet]
         public IActionResult GetAll()
         {
             var Magazines = _unitOfWork.MagazineRepository.GetAll();
             return Ok(Magazines);
         }
-
         [HttpGet("{id}")]
         public IActionResult GetMagazineById(int id)
         {
@@ -33,6 +34,7 @@ namespace Clean_Arch___UnitOFWork.Controllers
             return Ok(magazine);
         }
 
+        //-------Adding new Magazine
         [HttpPost]
         public IActionResult AddMagazine([FromBody] Magazine magazine)
         {
@@ -47,6 +49,7 @@ namespace Clean_Arch___UnitOFWork.Controllers
             return CreatedAtAction(nameof(GetMagazineById), new { id = magazine.Id }, magazine);
         }
 
+        //------Updating any magazine
         [HttpPut("{id}")]
         public IActionResult UpdateMagazine(int id, [FromBody] Magazine magazine)
         {
@@ -70,6 +73,8 @@ namespace Clean_Arch___UnitOFWork.Controllers
 
             return CreatedAtAction(nameof(GetMagazineById), new { id = magazine.Id }, magazine);
         }
+
+
         [HttpDelete("{id}")]
         public IActionResult DeleteMagazine(int id)
         {
@@ -85,6 +90,7 @@ namespace Clean_Arch___UnitOFWork.Controllers
             return Ok($"Magazine '{magazine.Name}' has been deleted.");
         }
 
+        //-------------Borrowing
         [HttpPost("{id}/borrow")]
         public IActionResult BorrowMagazine(int id)
         {
@@ -105,6 +111,7 @@ namespace Clean_Arch___UnitOFWork.Controllers
             });
         }
 
+        //-----------Return a magazine
         [HttpPost("{id}/return")]
         public IActionResult ReturnMagazine(int id)
         {

@@ -15,7 +15,7 @@ namespace Clean_Arch___UnitOFWork.Controllers
         {
             _unitOfWork=unitOfWork;
         }
-        //Get all books in Library
+        //------Get all books from Library------------
         [HttpGet]
         public IActionResult GetAllBooks() 
         {
@@ -23,7 +23,7 @@ namespace Clean_Arch___UnitOFWork.Controllers
             return Ok(books);
         }
 
-        //Get book by id 
+        //------Get a book by Id from Library------------
         [HttpGet("{id}")]
         public IActionResult GetBookById(int id)
         {
@@ -35,6 +35,8 @@ namespace Clean_Arch___UnitOFWork.Controllers
 
             return Ok(book);
         }
+
+        //------Adding new book------------
         [HttpPost]
         public IActionResult AddBook([FromBody] Book book)
         {
@@ -49,6 +51,7 @@ namespace Clean_Arch___UnitOFWork.Controllers
             return CreatedAtAction(nameof(GetAllBooks), new { id = book.Id }, book);
         }
 
+        //------Update an existng book from Library------------
         [HttpPut("{id}")]
         public IActionResult UpdateBook(int id, [FromBody] Book book)
         {
@@ -73,6 +76,7 @@ namespace Clean_Arch___UnitOFWork.Controllers
             return CreatedAtAction(nameof(GetBookById), new {id = book.Id}, book);
         }
 
+        //------Delete a book from Library------------
         [HttpDelete("{id}")]
         public IActionResult DeleteBook(int id)
         {
@@ -88,6 +92,7 @@ namespace Clean_Arch___UnitOFWork.Controllers
             return Ok($"Book '{book.Name}' has been deleted.");
         }
 
+        //------Borrowing------------
         [HttpPost("{id}/borrow")]
         public IActionResult BorrowBook(int id)
         {
@@ -108,7 +113,7 @@ namespace Clean_Arch___UnitOFWork.Controllers
                 Book = book
             });
         }
-
+        //------return book------------
         [HttpPost("{id}/return")]
         public IActionResult ReturnBook(int id)
         {
