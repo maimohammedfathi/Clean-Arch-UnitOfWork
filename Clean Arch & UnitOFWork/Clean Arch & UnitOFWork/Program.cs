@@ -1,8 +1,7 @@
-using Clean_Arch___UnitOFWork.Core.Interface;
-using Clean_Arch___UnitOFWork.Core.Repositories;
-using Clean_Arch___UnitOFWork.Core;
-using Clean_Arch___UnitOFWork.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using Clean_Arch___UnitOFWork.Application.Interface;
+using Clean_Arch___UnitOFWork.Persistance;
+using Clean_Arch___UnitOFWork.Persistance.Repositories;
 
 namespace Clean_Arch___UnitOFWork
 {

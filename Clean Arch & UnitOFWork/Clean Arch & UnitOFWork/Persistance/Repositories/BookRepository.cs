@@ -1,8 +1,8 @@
-﻿using Clean_Arch___UnitOFWork.Core.Domain;
-using Clean_Arch___UnitOFWork.Core.Interface;
-using Clean_Arch___UnitOFWork.Infrastructure;
+﻿using Clean_Arch___UnitOFWork.Application.Interface;
+using Clean_Arch___UnitOFWork.Core.Domain;
+using Clean_Arch___UnitOFWork.Persistance;
 
-namespace Clean_Arch___UnitOFWork.Core.Repositories
+namespace Clean_Arch___UnitOFWork.Persistance.Repositories
 {
     public class BookRepository : IBookRepository
     {

@@ -1,5 +1,5 @@
-﻿using Clean_Arch___UnitOFWork.Core.Domain;
-using Clean_Arch___UnitOFWork.Core.Interface;
+﻿using Clean_Arch___UnitOFWork.Application.Interface;
+using Clean_Arch___UnitOFWork.Core.Domain;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

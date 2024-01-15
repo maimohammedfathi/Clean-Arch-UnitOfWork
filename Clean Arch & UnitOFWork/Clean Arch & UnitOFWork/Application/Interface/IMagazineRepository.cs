@@ -1,6 +1,6 @@
 ﻿using Clean_Arch___UnitOFWork.Core.Domain;
 
-namespace Clean_Arch___UnitOFWork.Core.Interface
+namespace Clean_Arch___UnitOFWork.Application.Interface
 {
     public interface IMagazineRepository
     {
