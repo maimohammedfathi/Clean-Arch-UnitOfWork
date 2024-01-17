@@ -4,14 +4,14 @@ using Clean_Arch___UnitOFWork.Persistance;
 
 namespace Clean_Arch___UnitOFWork.Persistance.Repositories
 {
-    public class MagazineRepository : IMagazineRepository
+    public class MagazineRepository : IRepository<Magazine>
     {
         private readonly LibraryDbContext _context;
         public MagazineRepository(LibraryDbContext context)
         {
             _context = context;
         }
-        public List<Magazine> GetAll() => _context.Magazines.ToList();
+        public IEnumerable<Magazine> GetAll() => _context.Magazines.ToList();
 
         public Magazine GetById(int id) => _context.Magazines.FirstOrDefault(magazine => magazine.Id == id);
 

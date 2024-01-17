@@ -4,7 +4,7 @@ using Clean_Arch___UnitOFWork.Persistance;
 
 namespace Clean_Arch___UnitOFWork.Persistance.Repositories
 {
-    public class BookRepository : IBookRepository
+    public class BookRepository : IRepository<Book>
     {
         private readonly LibraryDbContext _context;
 

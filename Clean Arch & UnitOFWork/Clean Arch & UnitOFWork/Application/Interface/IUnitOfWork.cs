@@ -1,9 +1,20 @@
-﻿namespace Clean_Arch___UnitOFWork.Application.Interface
+﻿using Clean_Arch___UnitOFWork.Core.Domain;
+
+namespace Clean_Arch___UnitOFWork.Application.Interface
 {
     public interface IUnitOfWork
     {
-        IBookRepository BookRepository { get; }
-        IMagazineRepository MagazineRepository { get; }
+        #region Transaction 
+        //void BeginTransaction();
+        //void Commit();
+        //void RollBack();
+        #endregion
+
+        #region SavChange
         void SaveChanges();
+        #endregion
+
+        IRepository<Book> BookRepository { get; }
+        IRepository<Magazine> MagazineRepository { get; }
     }
 }
